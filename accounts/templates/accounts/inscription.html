@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="" method="post">
+        {% csrf_token %}
+    <h1 style="background: #1ca7ec; width: 14vw;height: 2.5vw;padding: 1%;color: whitesmoke;">Inscription</h1>
+        <label for="first_name">Prénom</label> <br>
+        <input type="text" name="first_name"   required> <br>
+        <label for="last_name">Nom</label> <br>
+        <input type="text" name="last_name"   required> <br>
+        <label for="email">Email</label> <br>
+        <input type="email" name="email"   required> <br>
+        <label for="username">Nom d'Utilisateur</label> <br>
+        <input type="text" name="username"   required> <br>
+        <label for="password">Mot de Passe </label> <br>
+        <input type="password" name="password"   required> <br>
+        <label for="password_confirm">Confirmer</label> <br>
+        <input type="password" name="password_confirm"   required> <br>
+        <input class="btn" type="submit" value="envoyer">
+    </form>
+    <p>
+        <a href="{% url 'connexion' %}">
+            <h2>
+                j'ai déjà un compte
+            </h2>
+        </a>
+    </p>
+    {% if message_chiffre %}
+    <p style="color: red;text-align: center;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+        {{message_chiffre}}
+    </p>
+    {% endif %}
+    {% if message_letter %}
+    <p style="color: red;text-align: center;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+        {{message_letter}}
+    </p>
+    {% endif %}
+    {% if message_email %}
+    <p style="color: red;text-align: center;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+        {{message_email }}
+    </p>
+    {% endif %}
+    {% if message_password %}
+    <p style="color: red;text-align: center;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+        {{message_password}}
+    </p>
+    {% endif %}
+    {% if message_error %}
+    <p style="color: red;text-align: center;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+        {{message_error}}
+    </p>
+    {% endif %}
+    
+    {% if message_len %}
+    <p style="color: red;text-align: center;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+        {{message_len}}
+    </p>
+    {% endif %}
+
+    <style>
+       
+        form{
+            margin-top: 5%;
+            text-align: start;
+            margin-left: 43%;
+        }
+        input{
+            height: 3vw;
+            width: 15vw;
+            border-radius: 5px;
+            border: none;
+            margin-top: 1vw;
+            background: rgba(183, 242, 244, 0.367);
+        }
+        a{
+            text-decoration: underline;
+            color: gray;
+            text-align: center;
+        }
+        h2{
+            text-align: center;
+            
+        }
+        .btn{
+            background: #4ADEDE;
+            color: white;
+            font-size: 1.2vw;
+        }
+        .btn:hover{
+            cursor: pointer;
+            
+        }
+        label{
+            text-align: start;
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Vos transfert Externes
+    </h1>
+    <table class="table table-dark table-striped">
+        <thead style="background: blue;color: white;">
+            <tr>
+                <th>ID Transaction</th>
+                <th>Compte Source </th>
+                <th>Compte Destination </th>
+                <th>Montant</th>
+                <th>Description</th>
+                <th>Devise</th>
+                <th>Date et heure </th>
+        
+            </tr>
+        </thead> <tbody>
+        {% for transaction in transferts %}
+       
+            <tr>
+                <th> {{  transaction.id  }} </th>
+                <th> {{  transaction.compte_source  }} </th>
+                <th> {{  transaction.compte_destination  }} </th>
+                <th> {{  transaction.montant }} </th>
+                <th> {{  transaction.devise }} </th>
+                <th> {{  transaction.date_heure }} </th>
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

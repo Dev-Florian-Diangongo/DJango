@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+    <h1> Verification de  votre Email </h1>
+       
+        <input type="email" name="email" placeholder="email" required> <br>
+        <input class="btn" type="submit" value="envoyer">
+    </form>
+    
+    {% if messageEmail %}
+    <p style="color: red; text-align: center;">
+            {{messageEmail}}
+    </p> <h3 style="color: gray; text-align: center;text-decoration: underline;font-weight: bold;">
+        <a href="{% url 'inscription' %}">souhaitez-vous créer un compte ?</a>
+    </h3>
+    {% endif %}
+    
+    <style>
+        form{
+            margin-top: 10%;
+            text-align: center;
+        }
+        input{
+            height: 3vw;
+            width: 15vw;
+            border-radius: 5px;
+            border: none;
+            margin-top: 1vw;
+            background: rgb(195, 193, 193);
+        }
+        a{
+            text-decoration: underline;
+            color: gray;
+            text-align: center;
+        }
+        h2{
+            text-align: center;
+        }
+        .btn{
+            background: #4ADEDE;
+            color: white;
+            font-size: 1.2vw;
+        }
+        .btn:hover{
+            cursor: pointer;
+
+        }
+    </style>
+</body>
+</html>
